@@ -1,0 +1,375 @@
+/* ═══════════════════════════════════════════════════════════════
+   Document Print Styles — EP File, EP Card, EC, Voucher
+   Matches the official DWASA MIS document formats
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Screen layout */
+.document-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.document-controls {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  padding: 12px;
+  background: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.document-controls button {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid #d1d5db;
+  background: white;
+  color: #374151;
+}
+
+.document-controls button:hover {
+  background: #f3f4f6;
+}
+
+.document-controls button.primary {
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
+}
+
+.document-controls button.primary:hover {
+  background: #1d4ed8;
+}
+
+/* ═══ Document Paper (landscape A4 simulation) ═══ */
+.document-paper {
+  background: white;
+  border: 1px solid #d1d5db;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  padding: 32px 40px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 12px;
+  line-height: 1.4;
+  color: #111;
+}
+
+.document-paper.landscape {
+  /* Landscape aspect ratio approximation */
+  max-width: 1060px;
+}
+
+.document-paper.portrait {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.document-paper.epicad-sheet {
+  /* EPICAD card: full A4-landscape sheet, no clipping */
+  max-width: 100%;
+  padding: 0;
+  margin: 0 auto;
+  border: none;
+  box-shadow: none;
+}
+
+/* ═══ Document Header ═══ */
+.doc-header {
+  text-align: center;
+  margin-bottom: 16px;
+  border-bottom: 2px solid #111;
+  padding-bottom: 12px;
+}
+
+.doc-header .govt-line {
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+.doc-header .authority-line {
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.doc-header .doc-title {
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: underline;
+  margin-bottom: 4px;
+}
+
+.doc-header .date-page {
+  font-size: 11px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.doc-header .project-line {
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+.doc-header .ep-type {
+  font-size: 11px;
+}
+
+/* ═══ Section Titles ═══ */
+.doc-section-title {
+  font-size: 12px;
+  font-weight: bold;
+  text-decoration: underline;
+  margin: 14px 0 8px 0;
+}
+
+/* ═══ Personal Info Grid ═══ */
+.personal-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px 24px;
+  font-size: 12px;
+}
+
+.personal-info-grid .info-row {
+  display: flex;
+  gap: 4px;
+}
+
+.personal-info-grid .info-label {
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.personal-info-grid .info-value {
+  flex: 1;
+  border-bottom: 1px dotted #999;
+  min-height: 16px;
+}
+
+/* ═══ Data Tables ═══ */
+.doc-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+  margin: 8px 0;
+}
+
+.doc-table th,
+.doc-table td {
+  border: 1px solid #333;
+  padding: 4px 6px;
+  text-align: left;
+}
+
+.doc-table th {
+  background: #f0f0f0;
+  font-weight: bold;
+  font-size: 11px;
+}
+
+.doc-table td {
+  font-size: 11px;
+}
+
+.doc-table .text-right {
+  text-align: right;
+}
+
+.doc-table .text-center {
+  text-align: center;
+}
+
+.doc-table .total-row {
+  font-weight: bold;
+  background: #f8f8f8;
+}
+
+.doc-table .total-row td {
+  border-top: 2px solid #333;
+}
+
+/* ═══ Empty Section ═══ */
+.doc-empty {
+  color: #888;
+  font-style: italic;
+  padding: 12px 0;
+  text-align: center;
+  font-size: 11px;
+}
+
+/* ═══ Signature Block ═══ */
+.doc-signatures {
+  margin-top: 32px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+}
+
+.doc-signatures .sig-block {
+  text-align: center;
+  min-width: 150px;
+}
+
+.doc-signatures .sig-line {
+  border-top: 1px solid #333;
+  margin-top: 40px;
+  padding-top: 4px;
+}
+
+/* ═══ EP Card Specific ═══ */
+.ep-card-paper {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.ep-card-header {
+  text-align: center;
+  border: 2px solid #111;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.ep-card-body {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 16px;
+}
+
+.ep-card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 16px;
+  font-size: 12px;
+}
+
+.ep-card-grid .field-label {
+  font-weight: bold;
+  font-size: 10px;
+  color: #555;
+  text-transform: uppercase;
+}
+
+.ep-card-grid .field-value {
+  font-size: 13px;
+  font-weight: 500;
+  min-height: 18px;
+  border-bottom: 1px dotted #ccc;
+  padding-bottom: 2px;
+}
+
+/* ═══ EC / Voucher Compensation Table ═══ */
+.comp-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+  margin: 8px 0;
+}
+
+.comp-table th,
+.comp-table td {
+  border: 1px solid #333;
+  padding: 3px 6px;
+}
+
+.comp-table th {
+  background: #f0f0f0;
+  font-weight: bold;
+}
+
+.comp-table .cat-col {
+  width: 55%;
+}
+
+.comp-table .amt-col {
+  width: 15%;
+  text-align: right;
+}
+
+.comp-table .total-row td {
+  font-weight: bold;
+  border-top: 2px solid #333;
+  background: #f8f8f8;
+}
+
+.comp-table .grand-total td {
+  font-weight: bold;
+  font-size: 13px;
+  border-top: 3px double #333;
+  background: #f0f0f0;
+}
+
+.doc-in-words {
+  margin: 8px 0;
+  font-size: 12px;
+  font-style: italic;
+}
+
+/* ═══ Print Styles ═══ */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .document-paper,
+  .document-paper * {
+    visibility: visible;
+  }
+
+  .epf-doc,
+  .epf-doc * {
+    visibility: visible;
+  }
+
+  .epf-doc {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+
+  .document-paper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    border: none;
+    box-shadow: none;
+    padding: 15mm 15mm;
+    margin: 0;
+  }
+
+  .document-paper.epicad-sheet {
+    /* EPICAD card prints edge-to-edge so the 281mm card exactly
+       fills the A4 landscape page (import from template @page) */
+    padding: 0;
+  }
+
+  .document-controls {
+    display: none !important;
+  }
+
+  .document-page {
+    padding: 0;
+    max-width: none;
+  }
+
+  @page {
+    size: A4 landscape;
+    margin: 0;
+  }
+}
+
+@media print and (orientation: portrait) {
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+}

@@ -1,0 +1,40 @@
+﻿
+# Dependencies and generated output
+node_modules/
+dist/
+coverage/
+
+# Environment secrets and local configuration
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+!.env.production.example
+!.env.development.example
+!.env.test.example
+!.env.staging.example
+!.env.local.example
+!.env.production.local.example
+!.env.development.local.example
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Local editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+tsconfig*.tsbuildinfo
+ts-out.txt
+vite_server_*.log
+
+
+tsconfig*.tsbuildinfo
+ts-out.txt
+vite_server_*.log
+

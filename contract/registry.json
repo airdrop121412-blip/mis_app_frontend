@@ -1,0 +1,1906 @@
+{
+  "version": "1.0",
+  "generatedAt": "2026-09-01T07:29:38.215Z",
+  "sourceFile": "src/config/reportRegistry.ts",
+  "reportCount": 26,
+  "reports": [
+    {
+      "slug": "ep-register",
+      "label": "EP Register",
+      "group": "EP / Population",
+      "columns": [
+        {
+          "key": "ep_id",
+          "label": "EP ID",
+          "type": "string"
+        },
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "string"
+        },
+        {
+          "key": "father_name",
+          "label": "Father Name",
+          "type": "string"
+        },
+        {
+          "key": "mother_name",
+          "label": "Mother Name",
+          "type": "string"
+        },
+        {
+          "key": "nid_number",
+          "label": "NID Number",
+          "type": "string"
+        },
+        {
+          "key": "mobile",
+          "label": "Mobile",
+          "type": "string"
+        },
+        {
+          "key": "gender",
+          "label": "Gender",
+          "type": "string"
+        },
+        {
+          "key": "date_of_birth",
+          "label": "Date of Birth",
+          "type": "date"
+        },
+        {
+          "key": "religion",
+          "label": "Religion",
+          "type": "string"
+        },
+        {
+          "key": "occupation",
+          "label": "Occupation",
+          "type": "string"
+        },
+        {
+          "key": "district",
+          "label": "District",
+          "type": "string"
+        },
+        {
+          "key": "upazila",
+          "label": "Upazila",
+          "type": "string"
+        },
+        {
+          "key": "land_status",
+          "label": "Land Status",
+          "type": "string"
+        },
+        {
+          "key": "rc_type",
+          "label": "RC Type",
+          "type": "string"
+        },
+        {
+          "key": "monthly_income",
+          "label": "Monthly Income",
+          "type": "money"
+        },
+        {
+          "key": "monthly_expense",
+          "label": "Monthly Expense",
+          "type": "money"
+        },
+        {
+          "key": "is_household_head",
+          "label": "Household Head",
+          "type": "boolean"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "string"
+        }
+      ],
+      "filters": [
+        {
+          "name": "project_id",
+          "type": "integer",
+          "label": "Project"
+        },
+        {
+          "name": "district_id",
+          "type": "integer",
+          "label": "District"
+        },
+        {
+          "name": "upazila_id",
+          "type": "integer",
+          "label": "Upazila"
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "label": "Status"
+        }
+      ],
+      "summaryKeys": [
+        "total_count"
+      ],
+      "hasEntityTotals": false,
+      "hasDateRange": false
+    },
+    {
+      "slug": "ep-status-summary",
+      "label": "EP Status Summary",
+      "group": "EP / Population",
+      "columns": [
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "string"
+        },
+        {
+          "key": "ep_count",
+          "label": "EP Count",
+          "type": "integer"
+        },
+        {
+          "key": "percentage",
+          "label": "Percentage",
+          "type": "percentage"
+        }
+      ],
+      "filters": [
+        {
+          "name": "project_id",
+          "type": "integer",
+          "label": "Project"
+        },
+        {
+          "name": "district_id",
+          "type": "integer",
+          "label": "District"
+        },
+        {
+          "name": "upazila_id",
+          "type": "integer",
+          "label": "Upazila"
+        }
+      ],
+      "summaryKeys": [
+        "total_ep"
+      ],
+      "hasEntityTotals": false,
+      "hasDateRange": false
+    },
+    {
+      "slug": "ep-demographics",
+      "label": "EP Demographic Summary",
+      "group": "EP / Population",
+      "columns": [
+        {
+          "key": "dimension",
+          "label": "Dimension",
+          "type": "string"
+        },
+        {
+          "key": "dimension_value",
+          "label": "Value",
+          "type": "string"
+        },
+        {
+          "key": "ep_count",
+          "label": "EP Count",
+          "type": "integer"
+        }
+      ],
+      "filters": [
+        {
+          "name": "project_id",
+          "type": "integer",
+          "label": "Project"
+        },
+        {
+          "name": "district_id",
+          "type": "integer",
+          "label": "District"
+        },
+        {
+          "name": "upazila_id",
+          "type": "integer",
+          "label": "Upazila"
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "label": "Status"
+        }
+      ],
+      "summaryKeys": [
+        "total_ep"
+      ],
+      "hasEntityTotals": false,
+      "hasDateRange": false
+    },
+    {
+      "slug": "family-register",
+      "label": "Family Member Register",
+      "group": "EP / Population",
+      "columns": [
+        {
+          "key": "family_member_id",
+          "label": "Member ID",
+          "type": "integer"
+        },
+        {
+          "key": "ep_id",
+          "label": "EP ID",
+          "type": "string"
+        },
+        {
+          "key": "ep_name",
+          "label": "EP Name",
+          "type": "string"
+        },
+        {
+          "key": "relationship",
+          "label": "Relationship",
+          "type": "string"
+        },
+        {
+          "key": "gender",
+          "label": "Gender",
+          "type": "string"
+        },
+        {
+          "key": "age",
+          "label": "Age",
+          "type": "integer"
+        },
+        {
+          "key": "occupation",
+          "label": "Occupation",
+          "type": "string"
+        },
+        {
+          "key": "is_dependent",
+          "label": "Dependent",
+          "type": "boolean"
+        }
+      ],
+      "filters": [
+        {
+          "name": "project_id",
+          "type": "integer",
+          "label": "Project"
+        },
+        {
+          "name": "district_id",
+          "type": "integer",
+          "label": "District"
+        },
+        {
+          "name": "upazila_id",
+          "type": "integer",
+          "label": "Upazila"
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "label": "Status"
+        }
+      ],
+      "summaryKeys": [
+        "total_members"
+      ],
+      "hasEntityTotals": false,
+      "hasDateRange": false
+    },
+    {
+      "slug": "epicad-list",
+      "label": "EPICAD List",
+      "group": "EP / Population",
+      "columns": [
+        {
+          "key": "epicad_id",
+          "label": "EPICAD ID",
+          "type": "integer"
+        },
+        {
+          "key": "ep_id",
+          "label": "EP ID",
+          "type": "string"
+        },
+        {
+          "key": "name",
+          "label": "Name",
+          "type": "string"
+        },
+        {
+          "key": "nid_number",
+          "label": "NID Number",
+          "type": "string"
+        },
+        {
+          "key": "mobile",
+          "label": "Mobile",
+          "type": "string"
+        },
+        {
+          "key": "issue_date",
+          "label": "Issue Date",
+          "type": "date"
+        },
+        {
+          "key": "print_status",
+          "label": "Print Status",
+          "type": "string"
+        }
+      ],
+      "filters": [
+        {
+          "name": "project_id",
+          "type": "integer",
+          "label": "Project"
+        },
+        {
+          "name": "district_id",
+          "type": "integer",
+          "label": "District"
+        },
+        {
+          "name": "upazila_id",
+          "type": "integer",
+          "label": "Upazila"
+        },
+        {
+          "name": "print_status",
+          "type": "string",
+          "label": "Print Status",
+          "options": [
+            "NOT_PRINTED",
+            "PRINTED",
+            "REPRINTED"
+          ]
+        }
+      ],
+      "summaryKeys": [
+        "total_count"
+      ],
+      "hasEntityTotals": false,
+      "hasDateRange": false
+    },
+    {
+      "slug": "ec-register",
+      "label": "EC Register",
+      "group": "EC / Assessment",
+      "columns": [
+        {
+          "key": "ec_id",
+          "label": "EC ID",
+          "type": "integer"
+        },
+        {
+          "key": "ec_number",
+          "label": "EC Number",
+          "type": "string"
+        },
+        {
+          "key": "ep_id",
+          "label": "EP ID",
+          "type": "string"
+        },
+        {
+          "key": "ep_name",
+          "label": "EP Name",
+          "type": "string"
+        },
+        {
+          "key": "assessment_date",
+          "label": "Assessment Date",
+          "type": "date"
+        },
+        {
+          "key": "total_assessed_loss",
+          "label": "Total Assessed",
+          "type": "money"
+        },
+        {
+          "key": "total_compensation",
+          "label": "Total Compensation",
+          "type": "money"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "string"
+        }
+      ],
+      "filters": [
+        {
+          "name": "project_id",
+          "type": "integer",
+          "label": "Project"
+        },
+        {
+          "name": "district_id",
+          "type": "integer",
+          "label": "District"
+        },
+        {
+          "name": "upazila_id",
+          "type": "integer",
+          "label": "Upazila"
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "label": "Status"
+        }
+      ],
+      "summaryKeys": [
+        "total_ec",
+        "total_assessed",
+        "total_compensation"
+      ],
+      "hasEntityTotals": false,
+      "hasDateRange": false
+    },
+    {
+      "slug": "ec-status-summary",
+      "label": "EC Status Summary",
+      "group": "EC / Assessment",
+      "columns": [
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "string"
+        },
+        {
+          "key": "ec_count",
+          "label": "EC Count",
+          "type": "integer"
+        },
+        {
+          "key": "percentage",
+          "label": "Percentage",
+          "type": "percentage"
+        },
+        {
+          "key": "total_assessed",
+          "label": "Total Assessed",
+          "type": "money"
+        },
+        {
+          "key": "total_compensation",
+          "label": "Total Compensation",
+          "type": "money"
+        }
+      ],
+      "filters": [
+        {
+          "name": "project_id",
+          "type": "integer",
+          "label": "Project"
+        },
+        {
+          "name": "district_id",
+          "type": "integer",
+          "label": "District"
+        },
+        {
+          "name": "upazila_id",
+          "type": "integer",
+          "label": "Upazila"
+        }
+      ],
+      "summaryKeys": [
+        "total_ec"
+      ],
+      "hasEntityTotals": false,
+      "hasDateRange": false
+    },
+    {
+      "slug": "assessment-summary",
+      "label": "Assessment Summary by Category",
+      "group": "EC / Assessment",
+      "columns": [
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "string"
+        },
+        {
+          "key": "ec_count",
+          "label": "EC Count",
+          "type": "integer"
+        },
+        {
+          "key": "ep_count",
+          "label": "EP Count",
+          "type": "integer"
+        },
+        {
+          "key": "total_assessed",
+          "label": "Total Assessed",
+          "type": "money"
+        },
+        {
+          "key": "line_count",
+          "label": "Line Items",
+          "type": "integer"
+        },
+        {
+          "key": "percentage",
+          "label": "Percentage",
+          "type": "percentage"
+        }
+      ],
+      "filters": [
+        {
+          "name": "project_id",
+          "type": "integer",
+          "label": "Project"
+        },
+        {
+          "name": "district_id",
+          "type": "integer",
+          "label": "District"
+        },
+        {
+          "name": "upazila_id",
+          "type": "integer",
+          "label": "Upazila"
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "label": "Status"
+        }
+      ],
+      "summaryKeys": [
+        "total_assessed",
+        "total_categories"
+      ],
+      "hasEntityTotals": false,
+      "hasDateRange": false
+    },
+    {
+      "slug": "land-assessment",
+      "label": "Land Assessment Detail",
+      "group": "EC / Assessment",
+      "columns": [
+        {
+          "key": "land_assessment_id",
+          "label": "Assessment ID",
+          "type": "integer"
+        },
+        {
+          "key": "ep_id",
+          "label": "EP ID",
+          "type": "string"
+        },
+        {
+          "key": "ep_name",
+          "label": "EP Name",
+          "type": "string"
+        },
+        {
+          "key": "land_type",
+          "label": "Land Type",
+          "type": "string"
+        },
+        {
+          "key": "land_area",
+          "label": "Land Area",
+          "type": "number"
+        },
+        {
+          "key": "land_area_unit",
+          "label": "Area Unit",
+          "type": "string"
+        },
+        {
+          "key": "damage_type",
+          "label": "Damage Type",
+          "type": "string"
+        },
+        {
+          "key": "affected_area",
+          "label": "Affected Area",
+          "type": "number"
+        },
+        {
+          "key": "affected_area_unit",
+          "label": "Affected Unit",
+          "type": "string"
+        },
+        {
+          "key": "rate_per_unit",
+          "label": "Rate Per Unit",
+          "type": "money"
+        },
+        {
+          "key": "assessed_loss",
+          "label": "Assessed Loss",
+          "type": "money"
+        }
+      ],
+      "filters": [
+        {
+          "name": "project_id",
+          "type": "integer",
+          "label": "Project"
+        },
+        {
+          "name": "district_id",
+          "type": "integer",
+          "label": "District"
+        },
+        {
+          "name": "upazila_id",
+          "type": "integer",
+          "label": "Upazila"
+        },
+        {
+          "name": "land_type_id",
+          "type": "integer",
+          "label": "Land Type"
+        }
+      ],
+      "summaryKeys": [
+        "total_assessments",
+        "total_assessed"
+      ],
+      "hasEntityTotals": false,
+      "hasDateRange": false
+    },
+    {
+      "slug": "crop-assessment",
+      "label": "Crop Assessment Detail",
+      "group": "EC / Assessment",
+      "columns": [
+        {
+          "key": "crop_assessment_id",
+          "label": "Assessment ID",
+          "type": "integer"
+        },
+        {
+          "key": "ep_id",
+          "label": "EP ID",
+          "type": "string"
+        },
+        {
+          "key": "ep_name",
+          "label": "EP Name",
+          "type": "string"
+        },
+        {
+          "key": "land_type",
+          "label": "Land Type",
+          "type": "string"
+        },
+        {
+          "key": "crop_type",
+          "label": "Crop Type",
+          "type": "string"
+        },
+        {
+          "key": "season",
+          "label": "Season",
+          "type": "string"
+        },
+        {
+          "key": "cultivated_area",
+          "label": "Cultivated Area",
+          "type": "number"
+        },
+        {
+          "key": "area_unit",
+          "label": "Area Unit",
+          "type": "string"
+        },
+        {
+          "key": "damage_percentage",
+          "label": "Damage %",
+          "type": "number"
+        },
+        {
+          "key": "rate_per_unit",
+          "label": "Rate Per Unit",
+          "type": "money"
+        },
+        {
+          "key": "assessed_loss",
+          "label": "Assessed Loss",
+          "type": "money"
+        }
+      ],
+      "filters": [
+        {
+          "name": "project_id",
+          "type": "integer",
+          "label": "Project"
+        },
+        {
+          "name": "district_id",
+          "type": "integer",
+          "label": "District"
+        },
+        {
+          "name": "upazila_id",
+          "type": "integer",
+          "label": "Upazila"
+        },
+        {
+          "name": "crop_type_id",
+          "type": "integer",
+          "label": "Crop Type"
+        },
+        {
+          "name": "season_id",
+          "type": "integer",
+          "label": "Season"
+        }
+      ],
+      "summaryKeys": [
+        "total_assessments",
+        "total_assessed"
+      ],
+      "hasEntityTotals": false,
+      "hasDateRange": false
+    },
+    {
+      "slug": "compensation-summary",
+      "label": "Compensation Summary",
+      "group": "Compensation / Allowance",
+      "columns": [
+        {
+          "key": "category",
+          "label": "Category",
+          "type": "string"
+        },
+        {
+          "key": "compensation_count",
+          "label": "Compensation Count",
+          "type": "integer"
+        },
+        {
+          "key": "total_assessed",
+          "label": "Total Assessed",
+          "type": "money"
+        },
+        {
+          "key": "total_approved",
+          "label": "Total Approved",
+          "type": "money"
+        },
+        {
+          "key": "percentage",
+          "label": "Percentage",
+          "type": "percentage"
+        }
+      ],
+      "filters": [
+        {
+          "name": "project_id",
+          "type": "integer",
+          "label": "Project"
+        },
+        {
+          "name": "district_id",
+          "type": "integer",
+          "label": "District"
+        },
+        {
+          "name": "upazila_id",
+          "type": "integer",
+          "label": "Upazila"
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "label": "Status"
+        }
+      ],
+      "summaryKeys": [
+        "total_compensations",
+        "total_approved"
+      ],
+      "hasEntityTotals": false,
+      "hasDateRange": false
+    },
+    {
+      "slug": "allowance-list",
+      "label": "Allowance List",
+      "group": "Compensation / Allowance",
+      "columns": [
+        {
+          "key": "allowance_id",
+          "label": "Allowance ID",
+          "type": "integer"
+        },
+        {
+          "key": "ep_id",
+          "label": "EP ID",
+          "type": "string"
+        },
+        {
+          "key": "ep_name",
+          "label": "EP Name",
+          "type": "string"
+        },
+        {
+          "key": "rule_code",
+          "label": "Rule Code",
+          "type": "string"
+        },
+        {
+          "key": "rule_type",
+          "label": "Rule Type",
+          "type": "string"
+        },
+        {
+          "key": "is_eligible",
+          "label": "Eligible",
+          "type": "boolean"
+        },
+        {
+          "key": "computed_annual_income",
+          "label": "Computed Annual Income",
+          "type": "money"
+        },
+        {
+          "key": "grant_amount",
+          "label": "Grant Amount",
+          "type": "money"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "string"
+        }
+      ],
+      "filters": [
+        {
+          "name": "project_id",
+          "type": "integer",
+          "label": "Project"
+        },
+        {
+          "name": "district_id",
+          "type": "integer",
+          "label": "District"
+        },
+        {
+          "name": "upazila_id",
+          "type": "integer",
+          "label": "Upazila"
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "label": "Status"
+        }
+      ],
+      "summaryKeys": [
+        "total_count"
+      ],
+      "hasEntityTotals": false,
+      "hasDateRange": false
+    },
+    {
+      "slug": "allowance-summary",
+      "label": "Allowance Summary",
+      "group": "Compensation / Allowance",
+      "columns": [
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "string"
+        },
+        {
+          "key": "allowance_count",
+          "label": "Allowance Count",
+          "type": "integer"
+        },
+        {
+          "key": "total_grant",
+          "label": "Total Grant",
+          "type": "money"
+        },
+        {
+          "key": "percentage",
+          "label": "Percentage",
+          "type": "percentage"
+        }
+      ],
+      "filters": [
+        {
+          "name": "project_id",
+          "type": "integer",
+          "label": "Project"
+        },
+        {
+          "name": "district_id",
+          "type": "integer",
+          "label": "District"
+        },
+        {
+          "name": "upazila_id",
+          "type": "integer",
+          "label": "Upazila"
+        }
+      ],
+      "summaryKeys": [
+        "total_allowances",
+        "total_grant"
+      ],
+      "hasEntityTotals": false,
+      "hasDateRange": false
+    },
+    {
+      "slug": "vulnerability-report",
+      "label": "Vulnerability Report",
+      "group": "Compensation / Allowance",
+      "columns": [
+        {
+          "key": "rule_code",
+          "label": "Rule Code",
+          "type": "string"
+        },
+        {
+          "key": "rule_type",
+          "label": "Rule Type",
+          "type": "string"
+        },
+        {
+          "key": "annual_income_limit",
+          "label": "Annual Income Limit",
+          "type": "money"
+        },
+        {
+          "key": "rule_grant_amount",
+          "label": "Rule Grant Amount",
+          "type": "money"
+        },
+        {
+          "key": "is_active",
+          "label": "Active",
+          "type": "boolean"
+        },
+        {
+          "key": "evaluated_count",
+          "label": "Evaluated",
+          "type": "integer"
+        },
+        {
+          "key": "eligible_count",
+          "label": "Eligible",
+          "type": "integer"
+        },
+        {
+          "key": "ineligible_count",
+          "label": "Ineligible",
+          "type": "integer"
+        },
+        {
+          "key": "total_grants",
+          "label": "Total Grants",
+          "type": "money"
+        }
+      ],
+      "filters": [
+        {
+          "name": "project_id",
+          "type": "integer",
+          "label": "Project"
+        },
+        {
+          "name": "district_id",
+          "type": "integer",
+          "label": "District"
+        },
+        {
+          "name": "upazila_id",
+          "type": "integer",
+          "label": "Upazila"
+        }
+      ],
+      "summaryKeys": [
+        "total_rules"
+      ],
+      "hasEntityTotals": false,
+      "hasDateRange": false
+    },
+    {
+      "slug": "voucher-list",
+      "label": "Voucher List",
+      "group": "Voucher / Payment",
+      "columns": [
+        {
+          "key": "voucher_id",
+          "label": "Voucher ID",
+          "type": "integer"
+        },
+        {
+          "key": "voucher_number",
+          "label": "Voucher Number",
+          "type": "string"
+        },
+        {
+          "key": "voucher_date",
+          "label": "Voucher Date",
+          "type": "date"
+        },
+        {
+          "key": "approved_amount",
+          "label": "Approved Amount",
+          "type": "money"
+        },
+        {
+          "key": "payment_status",
+          "label": "Payment Status",
+          "type": "string"
+        },
+        {
+          "key": "ec_number",
+          "label": "EC Number",
+          "type": "string"
+        },
+        {
+          "key": "ep_id",
+          "label": "EP ID",
+          "type": "string"
+        },
+        {
+          "key": "ep_name",
+          "label": "EP Name",
+          "type": "string"
+        },
+        {
+          "key": "prepared_by_name",
+          "label": "Prepared By",
+          "type": "string"
+        },
+        {
+          "key": "verified_by_name",
+          "label": "Verified By",
+          "type": "string"
+        },
+        {
+          "key": "approved_by_name",
+          "label": "Approved By",
+          "type": "string"
+        }
+      ],
+      "filters": [
+        {
+          "name": "project_id",
+          "type": "integer",
+          "label": "Project"
+        },
+        {
+          "name": "district_id",
+          "type": "integer",
+          "label": "District"
+        },
+        {
+          "name": "upazila_id",
+          "type": "integer",
+          "label": "Upazila"
+        },
+        {
+          "name": "payment_status",
+          "type": "string",
+          "label": "Payment Status",
+          "options": [
+            "PENDING",
+            "PARTIAL",
+            "PAID"
+          ]
+        }
+      ],
+      "summaryKeys": [
+        "total_vouchers",
+        "total_amount"
+      ],
+      "hasEntityTotals": false,
+      "hasDateRange": false
+    },
+    {
+      "slug": "payment-summary",
+      "label": "Payment Summary",
+      "group": "Voucher / Payment",
+      "columns": [
+        {
+          "key": "payment_month",
+          "label": "Payment Month",
+          "type": "string"
+        },
+        {
+          "key": "payment_count",
+          "label": "Payment Count",
+          "type": "integer"
+        },
+        {
+          "key": "total_amount",
+          "label": "Total Amount",
+          "type": "money"
+        },
+        {
+          "key": "percentage",
+          "label": "Percentage",
+          "type": "percentage"
+        }
+      ],
+      "filters": [
+        {
+          "name": "project_id",
+          "type": "integer",
+          "label": "Project"
+        },
+        {
+          "name": "district_id",
+          "type": "integer",
+          "label": "District"
+        },
+        {
+          "name": "upazila_id",
+          "type": "integer",
+          "label": "Upazila"
+        },
+        {
+          "name": "from_date",
+          "type": "date",
+          "label": "From Date"
+        },
+        {
+          "name": "to_date",
+          "type": "date",
+          "label": "To Date"
+        }
+      ],
+      "summaryKeys": [
+        "total_payments",
+        "total_amount"
+      ],
+      "hasEntityTotals": false,
+      "hasDateRange": true
+    },
+    {
+      "slug": "outstanding",
+      "label": "Outstanding Amounts",
+      "group": "Voucher / Payment",
+      "columns": [
+        {
+          "key": "voucher_id",
+          "label": "Voucher ID",
+          "type": "integer"
+        },
+        {
+          "key": "voucher_number",
+          "label": "Voucher Number",
+          "type": "string"
+        },
+        {
+          "key": "voucher_date",
+          "label": "Voucher Date",
+          "type": "date"
+        },
+        {
+          "key": "approved_amount",
+          "label": "Approved Amount",
+          "type": "money"
+        },
+        {
+          "key": "total_paid",
+          "label": "Total Paid",
+          "type": "money"
+        },
+        {
+          "key": "outstanding",
+          "label": "Outstanding",
+          "type": "money"
+        },
+        {
+          "key": "payment_status",
+          "label": "Payment Status",
+          "type": "string"
+        },
+        {
+          "key": "ec_number",
+          "label": "EC Number",
+          "type": "string"
+        },
+        {
+          "key": "ep_id",
+          "label": "EP ID",
+          "type": "string"
+        },
+        {
+          "key": "ep_name",
+          "label": "EP Name",
+          "type": "string"
+        }
+      ],
+      "filters": [
+        {
+          "name": "project_id",
+          "type": "integer",
+          "label": "Project"
+        },
+        {
+          "name": "district_id",
+          "type": "integer",
+          "label": "District"
+        },
+        {
+          "name": "upazila_id",
+          "type": "integer",
+          "label": "Upazila"
+        },
+        {
+          "name": "outstanding_only",
+          "type": "string",
+          "label": "Outstanding Only",
+          "options": [
+            "0",
+            "1"
+          ]
+        }
+      ],
+      "summaryKeys": [
+        "total_vouchers",
+        "total_outstanding"
+      ],
+      "hasEntityTotals": false,
+      "hasDateRange": false
+    },
+    {
+      "slug": "payment-method-breakdown",
+      "label": "Payment Method Breakdown",
+      "group": "Voucher / Payment",
+      "columns": [
+        {
+          "key": "payment_method",
+          "label": "Payment Method",
+          "type": "string"
+        },
+        {
+          "key": "payment_count",
+          "label": "Payment Count",
+          "type": "integer"
+        },
+        {
+          "key": "total_amount",
+          "label": "Total Amount",
+          "type": "money"
+        },
+        {
+          "key": "percentage",
+          "label": "Percentage",
+          "type": "percentage"
+        }
+      ],
+      "filters": [
+        {
+          "name": "project_id",
+          "type": "integer",
+          "label": "Project"
+        },
+        {
+          "name": "district_id",
+          "type": "integer",
+          "label": "District"
+        },
+        {
+          "name": "upazila_id",
+          "type": "integer",
+          "label": "Upazila"
+        }
+      ],
+      "summaryKeys": [
+        "total_payments",
+        "total_amount"
+      ],
+      "hasEntityTotals": false,
+      "hasDateRange": false
+    },
+    {
+      "slug": "district-summary",
+      "label": "District Summary",
+      "group": "Geographic / Aggregate",
+      "columns": [
+        {
+          "key": "district_id",
+          "label": "District ID",
+          "type": "integer"
+        },
+        {
+          "key": "district_name",
+          "label": "District",
+          "type": "string"
+        },
+        {
+          "key": "district_code",
+          "label": "District Code",
+          "type": "string"
+        },
+        {
+          "key": "ep_count",
+          "label": "EP Count",
+          "type": "integer"
+        },
+        {
+          "key": "ec_count",
+          "label": "EC Count",
+          "type": "integer"
+        },
+        {
+          "key": "total_assessed",
+          "label": "Total Assessed",
+          "type": "money"
+        },
+        {
+          "key": "total_compensation",
+          "label": "Total Compensation",
+          "type": "money"
+        },
+        {
+          "key": "allowance_count",
+          "label": "Allowance Count",
+          "type": "integer"
+        },
+        {
+          "key": "total_grant",
+          "label": "Total Grant",
+          "type": "money"
+        }
+      ],
+      "filters": [
+        {
+          "name": "project_id",
+          "type": "integer",
+          "label": "Project"
+        },
+        {
+          "name": "district_id",
+          "type": "integer",
+          "label": "District"
+        }
+      ],
+      "summaryKeys": [
+        "total_districts",
+        "total_eps"
+      ],
+      "hasEntityTotals": false,
+      "hasDateRange": false
+    },
+    {
+      "slug": "upazila-summary",
+      "label": "Upazila Summary",
+      "group": "Geographic / Aggregate",
+      "columns": [
+        {
+          "key": "upazila_id",
+          "label": "Upazila ID",
+          "type": "integer"
+        },
+        {
+          "key": "upazila_name",
+          "label": "Upazila",
+          "type": "string"
+        },
+        {
+          "key": "upazila_code",
+          "label": "Upazila Code",
+          "type": "string"
+        },
+        {
+          "key": "district_name",
+          "label": "District",
+          "type": "string"
+        },
+        {
+          "key": "ep_count",
+          "label": "EP Count",
+          "type": "integer"
+        },
+        {
+          "key": "ec_count",
+          "label": "EC Count",
+          "type": "integer"
+        },
+        {
+          "key": "total_assessed",
+          "label": "Total Assessed",
+          "type": "money"
+        },
+        {
+          "key": "total_compensation",
+          "label": "Total Compensation",
+          "type": "money"
+        },
+        {
+          "key": "allowance_count",
+          "label": "Allowance Count",
+          "type": "integer"
+        },
+        {
+          "key": "total_grant",
+          "label": "Total Grant",
+          "type": "money"
+        }
+      ],
+      "filters": [
+        {
+          "name": "project_id",
+          "type": "integer",
+          "label": "Project"
+        },
+        {
+          "name": "district_id",
+          "type": "integer",
+          "label": "District"
+        },
+        {
+          "name": "upazila_id",
+          "type": "integer",
+          "label": "Upazila"
+        }
+      ],
+      "summaryKeys": [
+        "total_upazilas",
+        "total_eps"
+      ],
+      "hasEntityTotals": false,
+      "hasDateRange": false
+    },
+    {
+      "slug": "project-summary",
+      "label": "Project Summary",
+      "group": "Geographic / Aggregate",
+      "columns": [
+        {
+          "key": "project_id",
+          "label": "Project ID",
+          "type": "integer"
+        },
+        {
+          "key": "project_code",
+          "label": "Project Code",
+          "type": "string"
+        },
+        {
+          "key": "project_name",
+          "label": "Project Name",
+          "type": "string"
+        },
+        {
+          "key": "ep_count",
+          "label": "EP Count",
+          "type": "integer"
+        },
+        {
+          "key": "ec_count",
+          "label": "EC Count",
+          "type": "integer"
+        },
+        {
+          "key": "total_assessed",
+          "label": "Total Assessed",
+          "type": "money"
+        },
+        {
+          "key": "total_compensation",
+          "label": "Total Compensation",
+          "type": "money"
+        },
+        {
+          "key": "allowance_count",
+          "label": "Allowance Count",
+          "type": "integer"
+        },
+        {
+          "key": "total_grant",
+          "label": "Total Grant",
+          "type": "money"
+        },
+        {
+          "key": "voucher_count",
+          "label": "Voucher Count",
+          "type": "integer"
+        },
+        {
+          "key": "total_paid",
+          "label": "Total Paid",
+          "type": "money"
+        }
+      ],
+      "filters": [
+        {
+          "name": "project_id",
+          "type": "integer",
+          "label": "Project"
+        }
+      ],
+      "summaryKeys": [
+        "total_projects",
+        "total_eps"
+      ],
+      "hasEntityTotals": false,
+      "hasDateRange": false
+    },
+    {
+      "slug": "workflow-status",
+      "label": "Workflow Status Report",
+      "group": "Operational",
+      "columns": [
+        {
+          "key": "entity_type",
+          "label": "Entity Type",
+          "type": "string"
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "type": "string"
+        },
+        {
+          "key": "count",
+          "label": "Count",
+          "type": "integer"
+        }
+      ],
+      "filters": [
+        {
+          "name": "project_id",
+          "type": "integer",
+          "label": "Project"
+        },
+        {
+          "name": "district_id",
+          "type": "integer",
+          "label": "District"
+        },
+        {
+          "name": "upazila_id",
+          "type": "integer",
+          "label": "Upazila"
+        }
+      ],
+      "summaryKeys": [],
+      "hasEntityTotals": true,
+      "hasDateRange": false
+    },
+    {
+      "slug": "epicad-print-status",
+      "label": "EPICAD Print Status",
+      "group": "Operational",
+      "columns": [
+        {
+          "key": "print_status",
+          "label": "Print Status",
+          "type": "string"
+        },
+        {
+          "key": "print_count",
+          "label": "Print Count",
+          "type": "integer"
+        },
+        {
+          "key": "percentage",
+          "label": "Percentage",
+          "type": "percentage"
+        }
+      ],
+      "filters": [
+        {
+          "name": "project_id",
+          "type": "integer",
+          "label": "Project"
+        },
+        {
+          "name": "district_id",
+          "type": "integer",
+          "label": "District"
+        },
+        {
+          "name": "upazila_id",
+          "type": "integer",
+          "label": "Upazila"
+        }
+      ],
+      "summaryKeys": [
+        "total_epicads"
+      ],
+      "hasEntityTotals": false,
+      "hasDateRange": false
+    },
+    {
+      "slug": "swtpp-ep-compensation",
+      "label": "SWTPP EP Compensation Register",
+      "group": "SWTPP Legacy",
+      "columns": [
+        {
+          "key": "ep_id",
+          "label": "EP ID",
+          "type": "string"
+        },
+        {
+          "key": "name",
+          "label": "EP Name",
+          "type": "string"
+        },
+        {
+          "key": "father_name",
+          "label": "Father Name",
+          "type": "string"
+        },
+        {
+          "key": "mother_name",
+          "label": "Mother Name",
+          "type": "string"
+        },
+        {
+          "key": "total_family_member",
+          "label": "Total Family",
+          "type": "integer"
+        },
+        {
+          "key": "male_member",
+          "label": "Male",
+          "type": "integer"
+        },
+        {
+          "key": "female_member",
+          "label": "Female",
+          "type": "integer"
+        },
+        {
+          "key": "total_tenant",
+          "label": "Total Tenant",
+          "type": "integer"
+        },
+        {
+          "key": "land_compensation",
+          "label": "Land Compensation",
+          "type": "money"
+        },
+        {
+          "key": "tree_compensation",
+          "label": "Tree Compensation",
+          "type": "money"
+        },
+        {
+          "key": "structure_compensation",
+          "label": "Structure Compensation",
+          "type": "money"
+        },
+        {
+          "key": "wage_compensation",
+          "label": "Wage Compensation",
+          "type": "money"
+        },
+        {
+          "key": "stamp_duty",
+          "label": "Stamp Duty",
+          "type": "money"
+        },
+        {
+          "key": "calculated_dc_compensation",
+          "label": "Calculated DC Compensation",
+          "type": "money"
+        },
+        {
+          "key": "legacy_dc_compensation",
+          "label": "Legacy DC Compensation",
+          "type": "money"
+        },
+        {
+          "key": "reconciliation_difference",
+          "label": "Difference",
+          "type": "money"
+        },
+        {
+          "key": "cheque_no",
+          "label": "Cheque No",
+          "type": "string"
+        },
+        {
+          "key": "cheque_date",
+          "label": "Cheque Date",
+          "type": "date"
+        },
+        {
+          "key": "status",
+          "label": "MIS Status",
+          "type": "string"
+        }
+      ],
+      "filters": [
+        {
+          "name": "project_id",
+          "type": "integer",
+          "label": "Project"
+        },
+        {
+          "name": "district_id",
+          "type": "integer",
+          "label": "District"
+        },
+        {
+          "name": "upazila_id",
+          "type": "integer",
+          "label": "Upazila"
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "label": "Status"
+        }
+      ],
+      "summaryKeys": [
+        "total_eps",
+        "total_calculated_compensation"
+      ],
+      "hasEntityTotals": false,
+      "hasDateRange": false
+    },
+    {
+      "slug": "swtpp-structure-register",
+      "label": "SWTPP Structure Register",
+      "group": "SWTPP Legacy",
+      "columns": [
+        {
+          "key": "infrastructure_id",
+          "label": "Structure ID",
+          "type": "integer"
+        },
+        {
+          "key": "ep_id",
+          "label": "EP ID",
+          "type": "string"
+        },
+        {
+          "key": "ep_name",
+          "label": "EP Name",
+          "type": "string"
+        },
+        {
+          "key": "structure_type",
+          "label": "Structure Type",
+          "type": "string"
+        },
+        {
+          "key": "length",
+          "label": "Length",
+          "type": "number"
+        },
+        {
+          "key": "width",
+          "label": "Width",
+          "type": "number"
+        },
+        {
+          "key": "area_sqft",
+          "label": "Area",
+          "type": "number"
+        },
+        {
+          "key": "damage_percentage",
+          "label": "Damage %",
+          "type": "percentage"
+        },
+        {
+          "key": "rate_per_sqft",
+          "label": "Structure Rate",
+          "type": "money"
+        },
+        {
+          "key": "assessed_loss",
+          "label": "DC Compensation",
+          "type": "money"
+        }
+      ],
+      "filters": [
+        {
+          "name": "project_id",
+          "type": "integer",
+          "label": "Project"
+        },
+        {
+          "name": "district_id",
+          "type": "integer",
+          "label": "District"
+        },
+        {
+          "name": "upazila_id",
+          "type": "integer",
+          "label": "Upazila"
+        }
+      ],
+      "summaryKeys": [
+        "total_structures",
+        "total_compensation"
+      ],
+      "hasEntityTotals": false,
+      "hasDateRange": false
+    },
+    {
+      "slug": "swtpp-payment-register",
+      "label": "SWTPP Payment Register",
+      "group": "SWTPP Legacy",
+      "columns": [
+        {
+          "key": "payment_id",
+          "label": "Payment ID",
+          "type": "integer"
+        },
+        {
+          "key": "ep_id",
+          "label": "EP ID",
+          "type": "string"
+        },
+        {
+          "key": "ep_name",
+          "label": "EP Name",
+          "type": "string"
+        },
+        {
+          "key": "voucher_number",
+          "label": "Voucher No",
+          "type": "string"
+        },
+        {
+          "key": "cheque_no",
+          "label": "Cheque No",
+          "type": "string"
+        },
+        {
+          "key": "cheque_date",
+          "label": "Cheque Date",
+          "type": "date"
+        },
+        {
+          "key": "payment_method",
+          "label": "Payment Method",
+          "type": "string"
+        },
+        {
+          "key": "amount",
+          "label": "Paid Amount",
+          "type": "money"
+        },
+        {
+          "key": "payment_status",
+          "label": "Payment Status",
+          "type": "string"
+        }
+      ],
+      "filters": [
+        {
+          "name": "project_id",
+          "type": "integer",
+          "label": "Project"
+        },
+        {
+          "name": "district_id",
+          "type": "integer",
+          "label": "District"
+        },
+        {
+          "name": "upazila_id",
+          "type": "integer",
+          "label": "Upazila"
+        }
+      ],
+      "summaryKeys": [
+        "total_payments",
+        "total_paid"
+      ],
+      "hasEntityTotals": false,
+      "hasDateRange": true
+    }
+  ]
+}

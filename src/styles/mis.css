@@ -1,0 +1,445 @@
+/* ═══════════════════════════════════════════════════════════════
+   MIS Design System — adapted from the approved "MIS Dashboard
+   Premium" format (navy sidebar / gradient accents / KPI cards /
+   workflow steps / status badges).
+   Scoped under `.mis-theme` so it never collides with app-wide
+   Tailwind utilities on other screens (Login, Project Select, etc.).
+   ═══════════════════════════════════════════════════════════════ */
+
+.mis-theme{
+  --navy:#12233f; --blue:#1769e0; --blue-soft:#eef5ff;
+  --bg:#f6f8fb; --border:#dfe5ec; --text:#172033; --muted:#68758a;
+  --green:#16834a; --green-bg:#eaf8f0; --amber:#a96b00; --amber-bg:#fff6df;
+  --red:#c62828; --red-bg:#fff0f0; --white:#fff;
+}
+.mis-theme *,.mis-theme *::before,.mis-theme *::after{box-sizing:border-box}
+
+@keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+.mis-theme{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:var(--text);background:radial-gradient(circle at 78% 0%,#eaf1ff 0,#f6f8fc 34%,#f5f7fb 70%);font-size:14px;min-height:100vh}
+.mis-theme button,.mis-theme input,.mis-theme select{font:inherit;color:inherit}
+
+/* ── Layout ─────────────────────────────────────────────────── */
+.mis-theme .app{display:flex;min-height:100vh}
+
+.mis-theme .sidebar{width:235px;background:linear-gradient(180deg,#0b1630 0%,#101e3e 58%,#111d38 100%);border-right:1px solid #17284b;display:flex;flex-direction:column;position:fixed;inset:0 auto 0 0;z-index:30;transition:width .2s ease}
+.mis-theme .brand{height:64px;border-bottom:1px solid rgba(255,255,255,.09);display:flex;align-items:center;padding:0 16px;font-size:18px;font-weight:800;color:#fff;background:linear-gradient(135deg,#0b1630,#182a52);gap:10px}
+.mis-theme .brand svg{width:20px;height:20px}
+.mis-theme .collapse{margin-left:auto;border:0;background:none;color:#9fb0ce;cursor:pointer;font-size:16px;padding:4px 6px;border-radius:5px;transition:.15s}
+.mis-theme .collapse:hover{background:rgba(255,255,255,.08);color:#fff}
+.mis-theme .project{padding:15px 14px;background:linear-gradient(135deg,rgba(37,99,235,.18),rgba(124,58,237,.16));border-bottom:1px solid rgba(255,255,255,.08);color:#fff}
+.mis-theme .eyebrow{font-size:10px;color:#8ab4ff;font-weight:700;letter-spacing:.6px;text-transform:uppercase}
+.mis-theme .project strong{display:block;margin:6px 0 3px;color:#fff;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mis-theme .project .code{font-size:11px;color:#4f6078;margin-bottom:5px}
+.mis-theme .project .switch{font-size:12px;color:#8ab4ff;cursor:pointer;background:none;border:0;padding:0;display:inline-block}
+.mis-theme .project .switch:hover{text-decoration:underline}
+.mis-theme .nav{padding:12px 10px;flex:1;overflow-y:auto}
+.mis-theme .nav-title{font-size:11px;color:#8395b5;font-weight:700;padding:0 8px 7px;text-transform:uppercase;letter-spacing:.5px}
+.mis-theme .nav-section{margin-top:13px}
+.mis-theme .nav-item{display:flex;align-items:center;gap:10px;padding:9px 10px;margin:2px 0;border-radius:7px;color:#d6e0f1;cursor:pointer;width:100%;background:none;border:0;text-align:left;font-size:14px;text-decoration:none;transition:.15s}
+.mis-theme .nav-item:hover{background:rgba(255,255,255,.07);color:#fff;text-decoration:none}
+.mis-theme .nav-item.active{background:linear-gradient(90deg,rgba(37,99,235,.95),rgba(124,58,237,.82));color:#fff;box-shadow:0 7px 20px rgba(37,99,235,.22)}
+.mis-theme .nav-item .ico{width:20px;text-align:center;display:grid;place-items:center;flex:none}
+.mis-theme .nav-item svg{width:18px;height:18px;stroke-width:1.8}
+.mis-theme .nav-item .lbl{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mis-theme .nav-item .chev{color:#93a6c7;font-size:11px;flex:none}
+.mis-theme .nav-item.active .chev{color:#e9efff}
+.mis-theme .nav-sublist{margin:1px 0 4px}
+.mis-theme .nav-subitem{display:flex;align-items:center;gap:8px;padding:7px 10px 7px 34px;border-radius:7px;color:#b9c6dd;cursor:pointer;font-size:13px;text-decoration:none;transition:.15s}
+.mis-theme .nav-subitem svg{width:15px;height:15px;stroke-width:1.8;opacity:.75}
+.mis-theme .nav-subitem:hover{background:rgba(255,255,255,.07);color:#fff}
+.mis-theme .nav-subitem.active{background:rgba(37,99,235,.55);color:#fff}
+.mis-theme .nav-subitem .sub-dot{width:5px;height:5px;border-radius:50%;background:#56688a;flex:none;transition:.15s}
+.mis-theme .nav-subitem:hover .sub-dot{background:#e6f0ff}
+.mis-theme .nav-subitem.active .sub-dot{background:#fff}
+.mis-theme .sidebar-footer{margin-top:auto;border-top:1px solid rgba(255,255,255,.09);padding:13px 12px;color:#c9d4e8}
+.mis-theme .user{font-size:12px;line-height:1.5;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mis-theme .user strong{display:block;color:#fff;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mis-theme .user .handle{color:#8395b5}
+.mis-theme .logout{color:#ff7777;cursor:pointer;background:none;border:0;padding:4px 0 0;font-size:12px;display:inline-flex;align-items:center;gap:5px}
+.mis-theme .logout svg{width:13px;height:13px}
+.mis-theme .logout:hover{color:#ff9b9b}
+
+.mis-theme .main{margin-left:235px;width:calc(100% - 235px);min-width:0;padding:22px 30px 35px;transition:margin .2s ease,width .2s ease}
+.mis-theme .container{width:100%;max-width:none;margin:0}
+
+/* ── Collapsed ──────────────────────────────────────────────── */
+.mis-theme.sidebar-collapsed .sidebar{width:64px}
+.mis-theme.sidebar-collapsed .brand{padding:0;justify-content:center}
+.mis-theme.sidebar-collapsed .brand .brand-name,
+.mis-theme.sidebar-collapsed .project,
+.mis-theme.sidebar-collapsed .nav-title,
+.mis-theme.sidebar-collapsed .nav-item .lbl,
+.mis-theme.sidebar-collapsed .nav-item .chev,
+.mis-theme.sidebar-collapsed .nav-sublist,
+.mis-theme.sidebar-collapsed .sidebar-footer{display:none}
+.mis-theme.sidebar-collapsed .nav{padding:12px 8px}
+.mis-theme.sidebar-collapsed .nav-item{justify-content:center;padding:9px}
+.mis-theme.sidebar-collapsed .main{margin-left:64px;width:calc(100% - 64px)}
+
+/* ── Top bar / typography ───────────────────────────────────── */
+.mis-theme .topbar{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.mis-theme h1{font-size:29px;margin:0 0 5px;color:var(--navy);letter-spacing:-.5px;font-weight:800}
+.mis-theme h1:before{content:"";display:inline-block;width:6px;height:6px;background:var(--blue);margin:0 10px 4px 0;border-radius:2px}
+.mis-theme .subtitle{color:#53627a;margin:0}
+.mis-theme .top-actions{display:flex;align-items:center;gap:10px}
+.mis-theme .search{width:250px;border:1px solid var(--border);border-radius:7px;padding:9px 12px;background:#fff;outline:none;color:#172033}
+.mis-theme .search::placeholder{color:#98a3b5}
+.mis-theme .search:focus{border-color:#8db8f5;box-shadow:0 0 0 3px #eaf2ff}
+.mis-theme .icon-btn,.mis-theme .primary{border:1px solid var(--border);background:rgba(255,255,255,.9);border-radius:8px;padding:9px 12px;cursor:pointer;box-shadow:0 4px 12px rgba(25,48,92,.04);display:inline-flex;align-items:center;gap:7px;font-size:13px;transition:.15s}
+.mis-theme .icon-btn:hover,.mis-theme .primary:hover{background:#fff;border-color:#c6d4ea}
+.mis-theme .icon-btn{position:relative}
+.mis-theme .icon-btn svg{width:18px;height:18px;stroke-width:1.8}
+.mis-theme .dot{position:absolute;right:5px;top:4px;width:7px;height:7px;background:#e53935;border-radius:50%}
+.mis-theme .rule{height:1px;background:var(--border);margin:22px 0 18px}
+
+/* ── Project bar ────────────────────────────────────────────── */
+.mis-theme .project-bar{border:1px solid #b8d1ff;background:linear-gradient(105deg,#eef5ff 0%,#f5f0ff 100%);border-radius:10px;box-shadow:0 7px 24px rgba(37,99,235,.07);padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.mis-theme .project-bar strong{color:#124fae}
+.mis-theme .project-bar .meta{color:#5c6d83}
+.mis-theme .project-select{border:1px solid #b9cbea;background:#fff;border-radius:5px;padding:6px 8px;color:#1b4f9b;outline:none;cursor:pointer}
+.mis-theme .project-bar .switch{color:var(--blue);font-weight:600;font-size:13px;text-decoration:none;white-space:nowrap}
+.mis-theme .project-bar .switch:hover{text-decoration:underline}
+
+/* ── KPI cards ──────────────────────────────────────────────── */
+.mis-theme .kpis{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin:16px 0 18px}
+.mis-theme .card{background:rgba(255,255,255,.94);border:1px solid rgba(220,227,239,.9);border-radius:12px;box-shadow:0 10px 30px rgba(25,48,92,.055)}
+.mis-theme .kpi{padding:14px;min-height:105px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 7px 24px rgba(25,48,92,.06);transition:.2s;text-decoration:none;color:inherit}
+.mis-theme .kpi:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(37,99,235,.12)}
+.mis-theme .kpi-top{display:flex;justify-content:space-between;align-items:center;color:#5e6b80}
+.mis-theme .kpi-icon{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:linear-gradient(135deg,#eef5ff,#f4efff);color:#4f46e5}
+.mis-theme .kpi-icon svg{width:20px;height:20px;stroke-width:1.9}
+.mis-theme .kpi-value{font-size:24px;font-weight:700;color:#101a2c}
+.mis-theme .kpi-meta{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.mis-theme .kpi-label{font-size:12px;color:#657188}
+.mis-theme .trend{font-size:11px;color:var(--green);font-weight:600;display:inline-flex;align-items:center;gap:3px}
+.mis-theme .trend svg{width:12px;height:12px}
+
+/* ── Sections ───────────────────────────────────────────────── */
+.mis-theme .section{padding:15px;margin-bottom:18px}
+.mis-theme .section-title{font-weight:750;margin-bottom:12px;color:#25344c;display:flex;align-items:center;gap:8px;font-size:14px}
+.mis-theme .section-title:before{content:'';width:4px;height:16px;border-radius:4px;background:linear-gradient(180deg,#2563eb,#7c3aed);display:inline-block}
+
+/* ── Workflow ───────────────────────────────────────────────── */
+.mis-theme .workflow{display:grid;grid-template-columns:repeat(6,1fr);gap:0}
+.mis-theme .step{position:relative;text-align:center;padding:12px 8px}
+.mis-theme .step:not(:last-child):after{content:"→";position:absolute;right:-7px;top:30px;color:#9aa7ba;font-size:18px}
+.mis-theme .step-icon{width:42px;height:42px;margin:0 auto 7px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#eff6ff,#f3efff);border:1px solid #dbe5f6;box-shadow:0 5px 15px rgba(37,99,235,.08)}
+.mis-theme .step-icon svg{width:20px;height:20px;stroke-width:1.8;color:#4f46e5}
+.mis-theme .step strong{display:block;font-size:18px;color:#101a2c}
+.mis-theme .step span{font-size:11px;color:var(--muted)}
+
+/* ── Two-column grid ────────────────────────────────────────── */
+.mis-theme .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.mis-theme .status-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid #edf0f4;gap:8px}
+.mis-theme .status-row:last-child{border-bottom:0}
+.mis-theme .status-row .row-label{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mis-theme .badge{padding:4px 9px;border-radius:12px;font-size:11px;font-weight:700;display:inline-block;white-space:nowrap}
+.mis-theme .badge.draft{background:#f1f3f6;color:#526074}
+.mis-theme .badge.pending{background:var(--amber-bg);color:var(--amber)}
+.mis-theme .badge.approved{background:var(--green-bg);color:var(--green)}
+.mis-theme .badge.rejected{background:var(--red-bg);color:var(--red)}
+.mis-theme .action{color:var(--blue);font-weight:600;cursor:pointer;font-size:12px;background:none;border:0;padding:0;white-space:nowrap}
+.mis-theme .action:hover{text-decoration:underline}
+
+/* ── Data quality ───────────────────────────────────────────── */
+.mis-theme .quality{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.mis-theme .quality-box{padding:13px;text-align:center;border-radius:6px;background:#f7f9fb}
+.mis-theme .quality-box.bad{background:var(--red-bg)}
+.mis-theme .quality-box.good{background:var(--green-bg)}
+.mis-theme .quality-box.blue{background:var(--blue-soft)}
+.mis-theme .quality-box strong{display:block;font-size:20px;color:#101a2c}
+.mis-theme .quality-box span{font-size:11px;color:#617087}
+
+/* ── Warning banner for data quality ────────────────────────────── */
+.mis-theme .warning-banner{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:12px;
+  padding:14px 18px;
+  background:#fff7ed;
+  border:1px solid #fed7aa;
+  border-radius:6px;
+}
+.mis-theme .warning-text{
+  display:flex;align-items:center;gap:8px;
+  font-size:13px;
+}
+.mis-theme .warning-text strong{
+  font-size:18px;
+  color:#9a3412;
+}
+.mis-theme .warning-icon{
+  font-size:16px;
+  font-weight:bold;
+  color:#d97706;
+}
+.mis-theme .warning-sub{
+  font-size:11px;
+  color:#92400e;
+}
+.mis-theme .warning-actions{
+  display:flex;gap:8px;
+}
+
+/* ── Button styles for warning banner ──────────────────────────── */
+.mis-theme .warning-actions .secondary{
+  background:#f3f4f6;
+  color:#374151;
+  border:1px solid #d1d5db;
+  padding:6px 12px;
+  border-radius:4px;
+  font-size:12px;
+  cursor:pointer;
+}
+.mis-theme .warning-actions .secondary:hover{
+  background:#e5e7eb;
+}
+.mis-theme .warning-actions .danger{
+  background:#fef2f2;
+  color:#b91c1c;
+  border:1px solid #fecaca;
+  padding:6px 12px;
+  border-radius:4px;
+  font-size:12px;
+  cursor:pointer;
+  font-weight:600;
+}
+.mis-theme .warning-actions .danger:hover{
+  background:#fee2e2;
+}
+.mis-theme .warning-actions .danger:disabled{
+  opacity:0.5;
+  cursor:wait;
+}
+/* ── Tables ─────────────────────────────────────────────────── */
+.mis-theme .table-wrap{width:100%;overflow-x:auto}
+.mis-theme table{width:100%;border-collapse:collapse;min-width:760px}
+.mis-theme th,.mis-theme td{text-align:left;padding:10px 9px;border-bottom:1px solid #e8ecf1}
+.mis-theme th{background:#f7f9fb;font-size:11px;text-transform:uppercase;color:#69768b;letter-spacing:.3px}
+.mis-theme td{font-size:12px}
+
+/* ── Quick links ────────────────────────────────────────────── */
+.mis-theme .quick{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.mis-theme .quick button{width:100%;padding:14px;border:1px solid var(--border);background:linear-gradient(135deg,#fff,#f8faff);border-radius:9px;cursor:pointer;box-shadow:0 5px 18px rgba(25,48,92,.045);transition:.2s;font-size:13px;color:var(--text);text-decoration:none;display:block}
+.mis-theme .quick a{width:100%;padding:14px 16px;border:1px solid var(--border);background:linear-gradient(135deg,#fff,#f8faff);border-radius:9px;cursor:pointer;box-shadow:0 5px 18px rgba(25,48,92,.045);transition:.2s;font-size:13px;color:var(--text);text-decoration:none;display:block;text-align:center}
+.mis-theme .quick a:hover{border-color:#a8c8f7;background:linear-gradient(135deg,#f8fbff,#f5f0ff);transform:translateY(-2px);text-decoration:none}
+.mis-theme .quick .qico{display:grid;place-items:center;width:40px;height:40px;margin:0 auto 7px;border-radius:12px;background:linear-gradient(135deg,#edf5ff,#f4efff);color:#4f46e5}
+.mis-theme .quick .qico svg{width:20px;height:20px;stroke-width:1.9}
+
+/* ── Generic helpers ────────────────────────────────────────── */
+.mis-theme .text-muted{color:var(--muted)}
+.mis-theme .money-num{font-variant-numeric:tabular-nums;white-space:nowrap}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width:1100px){
+  .mis-theme .kpis{grid-template-columns:repeat(3,1fr)}
+  .mis-theme .workflow{grid-template-columns:repeat(3,1fr)}
+  .mis-theme .grid2{grid-template-columns:1fr}
+  .mis-theme .top-actions .search{width:190px}
+}
+@media (max-width:760px){
+  .mis-theme .sidebar{width:64px}
+  .mis-theme .brand{padding:0;justify-content:center}
+  .mis-theme .brand .brand-name,
+  .mis-theme .project,.mis-theme .nav-title,
+  .mis-theme .nav-item .lbl,.mis-theme .nav-item .chev,
+  .mis-theme .nav-sublist,.mis-theme .sidebar-footer{display:none}
+  .mis-theme .nav{padding:12px 8px}
+  .mis-theme .nav-item{justify-content:center;padding:9px}
+  .mis-theme .main{margin-left:64px;width:calc(100% - 64px);padding:18px}
+  .mis-theme .topbar{align-items:flex-start}
+  .mis-theme .top-actions{flex-wrap:wrap;width:100%}
+  .mis-theme .top-actions .search{width:100%;max-width:none}
+  .mis-theme .kpis{grid-template-columns:repeat(2,1fr)}
+  .mis-theme .quick{grid-template-columns:repeat(2,1fr)}
+}
+
+/* ── Admin Correction modal ──────────────────────────────────────
+   The 10-step EP wizard (EPForm) is reused inside a modal on the
+   Correction screen. Its own page header is redundant there, so it
+   is hidden while the wizard body is kept intact.                 */
+.correction-modal .topbar,
+.correction-modal .rule{display:none}
+.correction-modal{padding:0}
+
+/* ── EP Data Import Wizard (step-by-step) ────────────────────────── */
+.mis-theme .mis-wizard-progress{
+  display:flex;gap:4px;margin:16px 0;flex-wrap:wrap;
+}
+.mis-theme .mis-wizard-step{
+  flex:1;min-width:120px;height:52px;border-radius:7px;border:1px solid var(--border);
+  background:linear-gradient(135deg,#fff,#f8faff);cursor:pointer;transition:.2s;
+  display:flex;align-items:center;gap:7px;padding:0 10px;font-size:12px;
+  color:var(--muted);text-decoration:none;
+}
+.mis-theme .mis-wizard-step:hover{
+  border-color:#a8c8f7;background:linear-gradient(135deg,#f8fbff,#f5f0ff);
+}
+.mis-theme .mis-wizard-step.current{
+  border-color:#4f46e5;background:linear-gradient(135deg,#eef5ff,#f4efff);
+  color:#4f46e5;font-weight:600;
+}
+.mis-theme .mis-wizard-step.done{
+  border-color:#16834a;color:#16834a;
+}
+.mis-theme .mis-wizard-step-num{
+  width:20px;height:20px;border-radius:50%;display:grid;place-items:center;
+  background:rgba(55,61,109,.1);font-size:10px;font-weight:700;
+}
+.mis-theme .mis-wizard-step.done .mis-wizard-step-num{
+  background:#16834a;color:#fff;
+}
+.mis-theme .mis-wizard-step.current .mis-wizard-step-num{
+  background:#4f46e5;color:#fff;
+}
+.mis-theme .mis-wizard-step-label{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+
+.mis-theme .mis-wizard-card{
+  background:#fff;border:1px solid var(--border);border-radius:10px;
+  padding:18px;margin-bottom:20px;box-shadow:0 5px 18px rgba(25,48,92,.045);
+}
+.mis-theme .mis-wizard-header h2{
+  font-size:16px;color:#101a2c;margin:0 0 4px;
+}
+.mis-theme .mis-wizard-en{
+  color:#657188;font-weight:400;
+}
+.mis-theme .mis-wizard-desc{
+  color:#68758a;font-size:13px;margin:0 0 16px;
+}
+
+.mis-theme .mis-file-input{
+  display:flex;align-items:center;gap:10px;padding:10px 14px;border:1.5px dashed var(--border);
+  border-radius:7px;background:#f7f9fb;cursor:pointer;margin-bottom:14px;font-size:13px;
+  transition:.2s;
+}
+.mis-theme .mis-file-input:hover{
+  border-color:#a8c8f7;background:#f0f7ff;
+}
+.mis-theme .mis-file-input input{
+  display:none;
+}
+.mis-theme .mis-file-label{
+  color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+
+.mis-theme .mis-wizard-actions{
+  display:flex;gap:10px;margin:14px 0;
+}
+.mis-theme .mis-wizard-error{
+  margin:12px 0;padding:10px 14px;border:1px solid #fecaca;border-radius:6px;
+  background:#fff0f0;color:#991d1d;font-size:13px;
+}
+.mis-theme .mis-wizard-error ul{margin:4px 0 0;padding-left:18px}
+
+.mis-theme .mis-wizard-result{
+  margin:14px 0;padding:12px;border:1px solid var(--border);border-radius:7px;
+  background:#f7f9fb;
+}
+.mis-theme .mis-wizard-summary{
+  display:flex;gap:16px;align-items:center;font-size:13px;
+}
+.mis-theme .mis-summary-item strong{font-size:16px}
+.mis-theme .mis-summary-item.error strong{color:#c62828}
+.mis-theme .mis-wizard-warning{
+  font-size:12px;color:#a96b00;margin-top:6px;
+}
+.mis-theme .mis-wizard-errors{
+  margin-top:10px;
+}
+.mis-theme .mis-wizard-errors h4{
+  font-size:12px;color:#657188;margin-bottom:6px;
+}
+.mis-theme .mis-wizard-nav{
+  display:flex;gap:10px;margin-top:14px;
+}
+.mis-theme .mis-wizard-sidebar{
+  background:#fff;border:1px solid var(--border);border-radius:10px;
+  padding:14px;min-width:200px;height:max-content;
+}
+.mis-theme .mis-wizard-sidebar h3{
+  font-size:13px;color:#101a2c;margin:0 0 8px;
+}
+.mis-theme .mis-wizard-sidebar-list{
+  display:flex;flex-direction:column;gap:4px;font-size:12px;
+}
+.mis-theme .mis-sidebar-item{
+  display:flex;align-items:center;gap:8px;padding:6px 9px;border-radius:5px;
+  cursor:pointer;transition:.15s;font-size:12px;
+}
+.mis-theme .mis-sidebar-item:hover{
+  background:#f0f7ff;
+}
+.mis-theme .mis-sidebar-item.done{
+  color:#16834a;font-weight:600;
+}
+.mis-theme .mis-sidebar-item.attempted{
+  color:#a96b00;font-weight:600;
+}
+.mis-theme .mis-sidebar-num{
+  width:20px;height:20px;border-radius:50%;display:grid;place-items:center;
+  background:rgba(55,61,109,.1);font-size:9px;font-weight:700;flex:none;
+}
+.mis-theme .mis-sidebar-label{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.mis-theme .mis-sidebar-status{
+  color:#657188;font-family:monospace;font-size:11px;flex:none;
+}
+
+/* ── Table responsive for wizard errors ── */
+.mis-theme .mis-table{
+  width:100%;border-collapse:collapse;font-size:12px;
+}
+.mis-theme .mis-table th{
+  text-align:left;padding:6px 9px;background:#f7f9fb;font-size:11px;
+  text-transform:uppercase;color:#69768b;border-bottom:1px solid var(--border);
+}
+.mis-theme .mis-table td{
+  padding:6px 9px;border-bottom:1px solid var(--border);
+}
+.mis-theme .mis-table tbody tr:hover{
+  background:#f0f7ff;
+}
+
+/* ── Clear-table buttons (wizard steps 2–10) ────────────────────── */
+.mis-theme .mis-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:6px 12px;border-radius:5px;border:1px solid var(--border);
+  background:linear-gradient(135deg,#fff,#f8faff);
+  font-size:12px;font-weight:500;cursor:pointer;transition:.15s;
+}
+.mis-theme .mis-btn:hover{
+  border-color:#a8c8f7;background:linear-gradient(135deg,#f8fbff,#f5f0ff);
+}
+.mis-theme .mis-btn:disabled{
+  opacity:0.5;cursor:wait;pointer-events:auto;
+}
+.mis-theme .mis-btn-primary{
+  background:linear-gradient(135deg,#2563eb,#7c3aed);color:#fff;border-color:#2563eb;
+}
+.mis-theme .mis-btn-primary:hover{
+  background:linear-gradient(135deg,#1d4ed8,#6d28d9);
+}
+.mis-theme .mis-btn-secondary{
+  background:#f3f4f6;color:#374151;border-color:#d1d5db;
+}
+.mis-theme .mis-btn-secondary:hover{
+  background:#e5e7eb;
+}
+.mis-theme .mis-btn-clear{
+  background:#fef2f2;color:#b91c1c;border-color:#fecaca;margin-left:auto;
+}
+.mis-theme .mis-btn-clear:hover{
+  background:#fee2e2;
+}
+.mis-theme .mis-sidebar-clear{
+  width:22px;height:22px;border-radius:4px;border:1px solid var(--border);
+  background:#fef2f2;color:#b91c1c;cursor:pointer;display:grid;
+  place-items:center;opacity:0.6;transition:.15s;
+}
+.mis-theme .mis-sidebar-clear:hover{
+  opacity:1;background:#fee2e2;
+}
+.mis-theme .mis-spinner{
+  width:14px;height:14px;border:2px solid var(--border);
+  border-top-color:#4f46e5;border-radius:50%;
+  animation:spin 0.7s linear infinite;
+}

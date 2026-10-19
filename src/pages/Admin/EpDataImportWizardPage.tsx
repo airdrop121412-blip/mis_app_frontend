@@ -42,6 +42,7 @@ export function EpDataImportWizardPage() {
   const [files, setFiles] = useState<Record<string, File | null>>({});
   const [results, setResults] = useState<Record<string, EpStepImportResult | null>>({});
   const [uploading, setUploading] = useState(false);
+  const [importProgress, setImportProgress] = useState(0);
   const [clearingStep, setClearingStep] = useState<string | null>(null);
   const [stepCounts, setStepCounts] = useState<Record<string, number>>({});
   const [error, setError] = useState<ErrorDetail | null>(null);
@@ -120,10 +121,32 @@ export function EpDataImportWizardPage() {
     }
     setUploading(true);
     setError(null);
+    setImportProgress(0);
     try {
-      const result = await importEpStep(file, projectId, stepKey);
-      setResults((prev) => ({ ...prev, [stepKey]: result }));
-      refreshStepCounts();
+      let uploadKey: string | null = null;
+      let offset = 0;
+      let done = false;
+      let lastResult: EpStepImportResult | null = null;
+
+      // Chunked import: one HTTP request per batch so no single request
+      // ever approaches the platform timeout. Keeps looping until done.
+      while (!done) {
+        const result = await importEpStep(file, projectId, stepKey, uploadKey, offset, 25);
+        uploadKey = result.upload_key;
+        offset = result.next_offset ?? offset;
+        done = result.done;
+        lastResult = result;
+
+        if (result.total_rows > 0) {
+          const processed = result.total_rows - (result.next_offset ?? result.total_rows);
+          setImportProgress(Math.round((processed / result.total_rows) * 100));
+        }
+      }
+
+      if (lastResult) {
+        setResults((prev) => ({ ...prev, [stepKey]: lastResult }));
+        refreshStepCounts();
+      }
     } catch (e) {
       setError(toDetail(e, 'Upload failed. Please try again.'));
     } finally {
@@ -277,6 +300,23 @@ export function EpDataImportWizardPage() {
                   )}
                 </button>
               </div>
+
+              {/* Import progress bar */}
+              {uploading && importProgress > 0 && (
+                <div className="mis-progress">
+                  <div
+                    className="mis-progress-bar"
+                    style={{ width: `${importProgress}%` }}
+                  />
+                  <span className="mis-progress-text">
+                    {importProgress}% imported
+                  </span>
+                </div>
+              )}
+
+              {uploading && importProgress === 0 && (
+                <div className="mis-progress-text">Starting import…</div>
+              )}
             </div>
           </>
         )}

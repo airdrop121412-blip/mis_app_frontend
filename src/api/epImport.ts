@@ -117,6 +117,13 @@ export interface EpStepImportResult {
   unknown_columns: string[];
   errors: EpImportRowError[];
   imported_ids: number[];
+  // Chunked-import continuation fields
+  upload_key: string;
+  total_rows: number;
+  offset: number;
+  next_offset: number | null;
+  batch_size: number;
+  done: boolean;
 }
 
 /** POST /imports/ep/step — upload a single sheet and import it */
@@ -124,11 +131,17 @@ export async function importEpStep(
   file: File,
   projectId: number,
   step: string,
+  uploadKey?: string | null,
+  offset = 0,
+  batchSize = 25,
 ): Promise<EpStepImportResult> {
   const form = new FormData();
   form.append('project_id', String(projectId));
   form.append('step', step);
   form.append('file', file);
+  if (uploadKey) form.append('upload_key', uploadKey);
+  form.append('offset', String(offset));
+  form.append('batch_size', String(batchSize));
 
   const response = await apiClient.post<ApiResponse<EpStepImportResult>>('/imports/ep/step', form);
 

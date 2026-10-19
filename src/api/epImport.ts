@@ -118,7 +118,6 @@ export interface EpStepImportResult {
   errors: EpImportRowError[];
   imported_ids: number[];
   // Chunked-import continuation fields
-  upload_key: string;
   total_rows: number;
   offset: number;
   next_offset: number | null;
@@ -131,7 +130,6 @@ export async function importEpStep(
   file: File,
   projectId: number,
   step: string,
-  uploadKey?: string | null,
   offset = 0,
   batchSize = 25,
 ): Promise<EpStepImportResult> {
@@ -139,7 +137,6 @@ export async function importEpStep(
   form.append('project_id', String(projectId));
   form.append('step', step);
   form.append('file', file);
-  if (uploadKey) form.append('upload_key', uploadKey);
   form.append('offset', String(offset));
   form.append('batch_size', String(batchSize));
 

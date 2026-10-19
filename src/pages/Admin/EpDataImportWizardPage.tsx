@@ -123,7 +123,6 @@ export function EpDataImportWizardPage() {
     setError(null);
     setImportProgress(0);
     try {
-      let uploadKey: string | null = null;
       let offset = 0;
       let done = false;
       let lastResult: EpStepImportResult | null = null;
@@ -131,8 +130,7 @@ export function EpDataImportWizardPage() {
       // Chunked import: one HTTP request per batch so no single request
       // ever approaches the platform timeout. Keeps looping until done.
       while (!done) {
-        const result = await importEpStep(file, projectId, stepKey, uploadKey, offset, 25);
-        uploadKey = result.upload_key;
+        const result = await importEpStep(file, projectId, stepKey, offset, 25);
         offset = result.next_offset ?? offset;
         done = result.done;
         lastResult = result;

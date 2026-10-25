@@ -82,7 +82,7 @@ const MIS_NAV_GROUPS: NavGroup[] = [
       { label: 'EP ID Codes', path: '/admin/ep-id-codes', icon: BadgeCheck },
       { label: 'Rate File', path: '/admin/rates', icon: Database, adminOnly: true },
       { label: 'Grant & Assistance', path: '/admin/grant-assistance', icon: Wallet, adminOnly: true },
-      { label: 'EP Data Import', path: '/admin/ep-import-wizard', icon: Database, adminOnly: true },
+      { label: 'EP Data Import', path: '/admin/ep-import-table', icon: Database, adminOnly: true },
     ],
   },
 ];

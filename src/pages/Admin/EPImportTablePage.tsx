@@ -4,7 +4,6 @@
 
 import { useEffect, useState } from 'react';
 import { Navigate } from 'react-router';
-import { Upload, Trash2, AlertTriangle, FileSpreadsheet, UsersRound, Landmark, Database, LayoutDashboard, Wallet, UserRound, MapPin, CheckCircle } from 'lucide-react';
 import { Upload, Trash2, AlertTriangle, FileSpreadsheet } from 'lucide-react';
 import { PageLayout } from '../../components/PageLayout';
 import { useAuth } from '../../hooks/useAuth';

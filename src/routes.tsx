@@ -5,9 +5,7 @@ import { EPDetail } from './pages/EP/EPDetail';
 import { EPForm } from './pages/EP/EPForm';
 import { EPFilePage } from './pages/EP/EPFilePage';
 import { EPFileGeneratorPage } from './pages/EP/EPFileGeneratorPage';
-import { EPList as EPListPage } from './pages/EP/EPList';
 import { EPGpsMapPage } from './pages/EP/EPGpsMapPage';
-import { EPGpsMapPage as EPGpsLocationPage } from './pages/EP/EPGpsMapPage';
 import { InvalidEpsPage } from './pages/EP/InvalidEpsPage';
 import { EpDataImportWizardPage } from './pages/Admin/EpDataImportWizardPage';
 import { EPImportTablePage } from './pages/Admin/EPImportTablePage';
@@ -16,16 +14,20 @@ import { UsersPage } from './pages/Admin/UsersPage';
 import { RolesPage } from './pages/Admin/RolesPage';
 import { GrantAssistancePage } from './pages/Admin/GrantAssistancePage';
 import { RateManagementPage } from './pages/Admin/RateManagementPage';
-import { EpImportPage } from './pages/Admin/EpImportPage';
 // ── Correction & Correction UI ─────────────────────────────
 import { CorrectionPage } from './pages/CorrectionPage';
-import { EpicadPage } from './pages/Epicad/EpicadPage';
+import { EpicadPage } from './pages/EP/EpicadPage';
+import { BaselinePage } from './pages/EP/BaselinePage';
+import { EcPage } from './pages/EP/EcPage';
+import { VoucherPage } from './pages/EP/VoucherPage';
+import { VoucherFileGeneratorPage } from './pages/EP/VoucherFileGeneratorPage';
+import { VoucherDetailPage } from './pages/EP/VoucherDetailPage';
+import { PaymentPage } from './pages/PaymentPage';
 
 import { ProjectSelect } from './pages/ProjectSelect';
 import { Login } from './pages/Login';
 import { ReportPage } from './pages/ReportPage';
 import { ReportsIndex } from './pages/ReportsIndex';
-import { ErrorDisplay } from './components/ErrorDisplay';
 
 export const router = createBrowserRouter([
   {

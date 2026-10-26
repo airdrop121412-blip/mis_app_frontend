@@ -1,4 +1,3 @@
-﻿import React from 'react';
 export function EPImportTablePage() {
   return (
     <div className="p-4">

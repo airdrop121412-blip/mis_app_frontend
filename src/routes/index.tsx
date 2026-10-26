@@ -32,6 +32,7 @@ import { RolesPage } from '../pages/Admin/RolesPage';
 import { GrantAssistancePage } from '../pages/Admin/GrantAssistancePage';
 import { EpImportPage } from '../pages/Admin/EpImportPage';
 import { EpDataImportWizardPage } from '../pages/Admin/EpDataImportWizardPage';
+import { EPImportTablePage } from '../pages/Admin/EPImportTablePage';
 import { EcPage } from '../pages/EP/EcPage';
 import { ECPrintPage } from '../pages/EP/ECPrintPage';
 import { VoucherPage } from '../pages/EP/VoucherPage';
@@ -95,6 +96,7 @@ export const router = createBrowserRouter([
       { path: 'admin/grant-assistance', element: <GrantAssistancePage /> },
       { path: 'admin/ep-import', element: <EpImportPage /> },
       { path: 'admin/ep-import-wizard', element: <EpDataImportWizardPage /> },
+{ path: 'admin/ep-import-table', element: <EPImportTablePage /> },
 
       // ── Auth ─────────────────────────────────────────────────
       { path: 'login', element: <Login /> },

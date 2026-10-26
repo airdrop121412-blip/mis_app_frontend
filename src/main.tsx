@@ -4,7 +4,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { RouterProvider } from 'react-router';
 import { AuthProvider } from './contexts/AuthContext';
 import { ProjectProvider } from './contexts/ProjectContext';
-import { router } from './routes';
+import { router } from './routes/index';
 import './index.css';
 import './styles/documents.css';
 import './styles/mis.css';
